@@ -4,7 +4,7 @@ node {
         checkout scm
     }
     stage('Build image') {
-       app = docker.build("mjovanovik/kiii-jenkins")
+       app = docker.build("alenjangelov9720/kiii-jenkins")
     }
     stage('Push image') {   
         if (env.BRANCH_NAME == 'dev') {
