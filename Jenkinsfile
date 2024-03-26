@@ -1,8 +1,10 @@
 node {
     def app
-    stage('Clone repository') {
-        checkout scm
-    }
+    stage('Cloning our Git') { 
+        steps { 
+            git 'https://github.com/alen-jangelov/kiii-jenkins.git' 
+        }
+    } 
     stage('Build image') {
        app = docker.build("alenjangelov9720/kiii-jenkins")
     }
